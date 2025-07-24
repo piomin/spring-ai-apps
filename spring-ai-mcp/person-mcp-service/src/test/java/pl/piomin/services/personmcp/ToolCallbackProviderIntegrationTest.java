@@ -1,11 +1,12 @@
 package pl.piomin.services.personmcp;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.ai.tool.execution.ToolCallbackProvider;
+import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import pl.piomin.services.tools.PersonTools;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
