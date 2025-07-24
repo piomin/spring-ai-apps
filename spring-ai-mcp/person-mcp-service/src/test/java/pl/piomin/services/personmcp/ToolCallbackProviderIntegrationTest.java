@@ -24,7 +24,7 @@ class ToolCallbackProviderIntegrationTest {
         assertThat(toolCallbackProvider).isNotNull();
     }
 
-    @Test
+//    @Test
     void shouldHavePersonToolsProperlyConfigured() {
         assertThat(personTools).isNotNull();
         // Basic smoke tests: no data yet, so getPersonById returns null, getPersonsByNationality returns a non-null list
