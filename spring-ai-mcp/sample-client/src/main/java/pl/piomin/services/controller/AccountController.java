@@ -20,7 +20,7 @@ import java.util.Map;
 @RequestMapping("/accounts")
 public class AccountController {
 
-    private final static Logger LOG = LoggerFactory.getLogger(PersonController.class);
+    private final static Logger LOG = LoggerFactory.getLogger(AccountController.class);
     private final ChatClient chatClient;
 
     public AccountController(ChatClient.Builder chatClientBuilder,

@@ -41,20 +41,4 @@
         </dependencies>
     </dependencyManagement>
 
-<!--    <repositories>-->
-<!--        <repository>-->
-<!--            <id>central</id>-->
-<!--            <name>Central</name>-->
-<!--            <url>https://repo1.maven.org/maven2/</url>-->
-<!--        </repository>-->
-<!--        <repository>-->
-<!--            <id>spring-milestones</id>-->
-<!--            <name>Spring Milestones</name>-->
-<!--            <url>https://repo.spring.io/milestone</url>-->
-<!--            <snapshots>-->
-<!--                <enabled>false</enabled>-->
-<!--            </snapshots>-->
-<!--        </repository>-->
-<!--    </repositories>-->
-
 </project>
