@@ -1,0 +1,5 @@
+spring.ai.mcp.client.streamable-http.connections:
+  docker-mcp-gateway:
+    url: http://localhost:8811
+
+mcp.token: ${MCP_TOKEN}
