@@ -12,23 +12,29 @@
     </parent>
 
     <groupId>pl.piomin.services</groupId>
-    <artifactId>spring-ai-apps</artifactId>
+    <artifactId>spring-ai-optimization</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
 
     <properties>
         <java.version>25</java.version>
         <spring-ai.version>1.1.2</spring-ai.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <sonar.projectKey>piomin_spring-ai-apps</sonar.projectKey>
-        <sonar.organization>piomin</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
-    <modules>
-        <module>spring-ai-mcp</module>
-        <module>spring-ai-optimization</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-anthropic</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
