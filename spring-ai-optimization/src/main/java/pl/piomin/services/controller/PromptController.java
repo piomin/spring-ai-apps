@@ -54,13 +54,12 @@ public class PromptController {
                         .model("claude-sonnet-4-5")
                         .cacheOptions(AnthropicCacheOptions.builder()
                                 .strategy(AnthropicCacheStrategy.SYSTEM_AND_TOOLS)
-//                                .messageTypeTtl(MessageType.SYSTEM, AnthropicCacheTtl.ONE_HOUR)
                                 .build())
-                        .maxTokens(500)
-                        .temperature(0.4)
+                        .maxTokens(1024)
                         .build());
 
         return chatClient.prompt(p)
+                .advisors(AdvisorParams.ENABLE_NATIVE_STRUCTURED_OUTPUT)
                 .call()
                 .entity(type);
     }
@@ -91,7 +90,7 @@ public class PromptController {
                         .cacheOptions(AnthropicCacheOptions.builder()
                                 .strategy(AnthropicCacheStrategy.SYSTEM_ONLY)
                                 .build())
-                        .maxTokens(500)
+                        .maxTokens(1024)
                         .build());
 
         ChatResponse cr = chatClient.prompt(p1)
