@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gemma
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gemma
+  template:
+    metadata:
+      labels:
+        app: gemma
+      name: gemma
+    spec:
+      containers:
+        - name: llama-server
+          image: quay.io/ramalama/ramalama:latest
+          command: [
+            llama-server,
+            --host, "0.0.0.0",
+            --port, "8080",
+            --model, /mnt/models/gemma-3-1b-it-q4_0.gguf,
+            --alias, "gemma",
+            --ctx-size, "4096",
+            --temp, "0.7",
+            --cache-reuse, "256",
+            -ngl, "999",
+            --threads, "8",
+            --no-warmup,
+            --log-colors, auto,
+          ]
+          resources:
+            limits:
+              squat.ai/dri: "1"
+          volumeMounts:
+            - name: models
+              mountPath: /mnt/models
+      volumes:
+        - name: models
+          hostPath:
+            path: /mnt/models
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: gemma
+  name: gemma
+spec:
+  selector:
+    app: gemma
+  ports:
+    - name: http
+      port: 8080
+  type: ClusterIP
