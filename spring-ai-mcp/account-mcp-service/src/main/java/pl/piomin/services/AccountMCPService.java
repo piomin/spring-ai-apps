@@ -1,8 +1,8 @@
 package pl.piomin.services;
 
 import io.modelcontextprotocol.spec.McpSchema;
-import org.springaicommunity.mcp.annotation.McpArg;
-import org.springaicommunity.mcp.annotation.McpPrompt;
+import org.springframework.ai.mcp.annotation.McpArg;
+import org.springframework.ai.mcp.annotation.McpPrompt;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.ai.tool.method.MethodToolCallbackProvider;
 import org.springframework.boot.SpringApplication;

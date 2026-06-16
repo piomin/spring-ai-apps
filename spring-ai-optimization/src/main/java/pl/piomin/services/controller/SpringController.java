@@ -1,9 +1,8 @@
 package pl.piomin.services.controller;
 
+import org.springframework.ai.anthropic.AnthropicCacheOptions;
+import org.springframework.ai.anthropic.AnthropicCacheStrategy;
 import org.springframework.ai.anthropic.AnthropicChatOptions;
-import org.springframework.ai.anthropic.api.AnthropicApi;
-import org.springframework.ai.anthropic.api.AnthropicCacheOptions;
-import org.springframework.ai.anthropic.api.AnthropicCacheStrategy;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatModel;
@@ -46,11 +45,11 @@ public class SpringController {
         );
 
         // Access cache-related token usage
-        AnthropicApi.Usage firstUsage = (AnthropicApi.Usage) firstResponse.getMetadata()
-                .getUsage().getNativeUsage();
-
-        System.out.println("Cache creation tokens: " + firstUsage.cacheCreationInputTokens());
-        System.out.println("Cache read tokens: " + firstUsage.cacheReadInputTokens());
+//        AnthropicApi.Usage firstUsage = (AnthropicApi.Usage) firstResponse.getMetadata()
+//                .getUsage().getNativeUsage();
+//
+//        System.out.println("Cache creation tokens: " + firstUsage.cacheCreationInputTokens());
+//        System.out.println("Cache read tokens: " + firstUsage.cacheReadInputTokens());
 
 // Second request with same system prompt - reads from cache
         ChatResponse secondResponse = chatModel.call(
@@ -69,10 +68,10 @@ public class SpringController {
                 )
         );
 
-        AnthropicApi.Usage secondUsage = (AnthropicApi.Usage) secondResponse.getMetadata()
-                .getUsage().getNativeUsage();
-
-        System.out.println("Cache creation tokens: " + secondUsage.cacheCreationInputTokens()); // Should be 0
-        System.out.println("Cache read tokens: " + secondUsage.cacheReadInputTokens());
+//        AnthropicApi.Usage secondUsage = (AnthropicApi.Usage) secondResponse.getMetadata()
+//                .getUsage().getNativeUsage();
+//
+//        System.out.println("Cache creation tokens: " + secondUsage.cacheCreationInputTokens()); // Should be 0
+//        System.out.println("Cache read tokens: " + secondUsage.cacheReadInputTokens());
     }
 }

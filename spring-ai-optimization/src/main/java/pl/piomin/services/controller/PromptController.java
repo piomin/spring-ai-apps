@@ -1,16 +1,12 @@
 package pl.piomin.services.controller;
 
+import org.springframework.ai.anthropic.AnthropicCacheOptions;
+import org.springframework.ai.anthropic.AnthropicCacheStrategy;
 import org.springframework.ai.anthropic.AnthropicChatOptions;
-import org.springframework.ai.anthropic.api.AnthropicApi;
-import org.springframework.ai.anthropic.api.AnthropicCacheOptions;
-import org.springframework.ai.anthropic.api.AnthropicCacheStrategy;
-import org.springframework.ai.anthropic.api.AnthropicCacheTtl;
 import org.springframework.ai.chat.client.AdvisorParams;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.messages.MessageType;
 import org.springframework.ai.chat.messages.SystemMessage;
-import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.chat.prompt.PromptTemplate;
@@ -97,11 +93,11 @@ public class PromptController {
                 .call()
                 .chatResponse();
 
-        AnthropicApi.Usage firstUsage = (AnthropicApi.Usage) cr.getMetadata()
-                .getUsage().getNativeUsage();
-
-        System.out.println("Cache creation tokens: " + firstUsage.cacheCreationInputTokens());
-        System.out.println("Cache read tokens: " + firstUsage.cacheReadInputTokens());
+//        AnthropicApi.Usage firstUsage = (AnthropicApi.Usage) cr.getMetadata()
+//                .getUsage().getNativeUsage();
+//
+//        System.out.println("Cache creation tokens: " + firstUsage.cacheCreationInputTokens());
+//        System.out.println("Cache read tokens: " + firstUsage.cacheReadInputTokens());
 
         return cr.getResult().toString();
     }

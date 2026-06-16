@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>pl.piomin.services</groupId>
-    <artifactId>spring-ai-optimization</artifactId>
+    <artifactId>spring-ai-openai-compatibility</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
