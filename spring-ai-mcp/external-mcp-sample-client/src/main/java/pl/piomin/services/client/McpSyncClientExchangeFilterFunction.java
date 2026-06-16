@@ -8,8 +8,6 @@ import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.ExchangeFunction;
 import reactor.core.publisher.Mono;
 
-import javax.validation.Valid;
-
 @Component
 public class McpSyncClientExchangeFilterFunction implements ExchangeFilterFunction {
 
